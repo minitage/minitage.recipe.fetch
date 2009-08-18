@@ -16,7 +16,7 @@ def read(*rnames):
 long_description = (
     read('README.txt')
     + '\n'\
-    + read('src', 'minitage', 'recipe', 'tests', 'fetch.txt')
+    + read('src', 'minitage', 'recipe', 'fetch', 'tests', 'fetch.txt')
     + '\n'
     + read('CHANGES.txt')
     + '\n'
@@ -63,8 +63,8 @@ setup(
     # workaround when using the 2 recipes in the same buildout.
     entry_points = {
         'zc.buildout' : [
-            'fetch = %s:Recipe' % 'minitage.recipe.fetch',
-            'default = %s:Recipe' % 'minitage.recipe.fetch',
+            'fetch = %s:Recipe' % 'minitage.recipe.fetch.fetch',
+            'default = %s:Recipe' % 'minitage.recipe.fetch.fetch',
         ]
     },
 )

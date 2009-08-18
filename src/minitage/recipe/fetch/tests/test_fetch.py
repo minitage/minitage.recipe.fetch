@@ -202,7 +202,6 @@ def doc_suite(test_dir, setUp=None, tearDown=None, globs=None):
     docs = [os.path.join(doctest_dir, doc) for doc in
             os.listdir(doctest_dir) if doc.endswith('.txt')
            ]
-    import pdb;pdb.set_trace()  ## Breakpoint ##
 
     for ftest in docs:
         test = doctest.DocFileSuite(ftest, optionflags=flags,
