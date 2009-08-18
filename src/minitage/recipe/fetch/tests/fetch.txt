@@ -18,6 +18,7 @@ Abstract
 
 Specific options
 -----------------
+Please look for options at : http://pypi.python.org/pypi/minitage.recipe.common#options-shared-by-all-the-recipes
 
 * urls
   See the shared options for more information on how to set them.

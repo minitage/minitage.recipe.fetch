@@ -9,11 +9,9 @@ Introduction
 =======================
 
 
-Please look for options at http://pypi.python.org/pypi/minitage.recipe.common
-
 The egg has those entry point:
 
-    - *fetch*: 
+    - *fetch*:
       recipe for fetching something, somewhere, with git, http, frp, static, hg, svn or bzr.
 
 You can browse the code on minitage's following resources:
