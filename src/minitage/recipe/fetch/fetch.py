@@ -32,7 +32,7 @@ __docformat__ = 'restructuredtext en'
 import os
 import shutil
 import tempfile
-from minitage.recipe import common
+from minitage.recipe.common import common
 from minitage.core.common import get_from_cache, system, splitstrip, test_md5
 from minitage.core.unpackers import *
 from distutils.dir_util import copy_tree
