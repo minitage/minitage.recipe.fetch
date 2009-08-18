@@ -1,6 +1,6 @@
 
 ===============================================
-minitage.recipe:fetch
+minitage.recipe.fetch
 ===============================================
 
 
@@ -23,7 +23,7 @@ Specific options
   See the shared options for more information on how to set them.
 * For the static fetcher, you can precise md5sum in the 'revision' field.
 * set unpack to automaticly unpack a downloaded archive, like::
-    
+
     [foo]
     unpack=True
 
@@ -92,7 +92,7 @@ Downloading some urls, files, git checkouts with one in a particular checkout di
     ... parts =
     ...     part
     ... [part]
-    ... recipe=minitage.recipe:fetch
+    ... recipe=minitage.recipe.fetch
     ... urls =file://${buildout:directory}/foo.tgz
     ...        http://git.minitage.org/git/minitage/eggs/minitage.core|git
     ...        http://git.minitage.org/git/minitage/eggs/minitage.recipe|git|e1f30b9d7a89572fa87fe26f8e353304532a281c|minitage.recipe.alt
@@ -113,7 +113,8 @@ Downloading some urls, files, git checkouts with one in a particular checkout di
     minitage.recipe: Setting path
     Initialized empty Git repository in /tmp/buildout.test/parts/part/http.git.minitage.org.git.minitage.eggs.minitage.core/.git/
     HEAD is now at ...
-    minitage.recipe: Completed dowbload of http://git.minitage.org/git/minitage/eggs/minitage.core in /tmp/buildout.test/parts/part/http.git.minitage.org.git.minitage.eggs.minitage.core
+    minitage.recipe: Completed dowbload of
+    http://git.minitage.org/git/minitage/eggs/minitage.core in /tmp/buildout.test/parts/part/http.git.minitage.org.git.minitage.eggs.minitage.core
     minitage.recipe: Finnished checkouts...
     <BLANKLINE>
     g...

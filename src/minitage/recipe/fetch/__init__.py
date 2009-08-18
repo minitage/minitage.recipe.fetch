@@ -60,6 +60,7 @@ class Recipe(common.MinitageCommonRecipe):
             self.buildout['buildout']['directory'],
             'cache'
         )
+        import pdb;pdb.set_trace()  ## Breakpoint ##
         directories = []
         self.logger.info('Start checkouts')
         for url, url_infos in self.urls.items():
