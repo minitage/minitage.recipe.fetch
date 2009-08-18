@@ -2,6 +2,11 @@
 CHANGELOG
 =======================
 
+1.36
+----.
+
+    - forgot to version one file
+
 1.35
 ------
 
