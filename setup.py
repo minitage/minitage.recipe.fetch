@@ -45,7 +45,7 @@ setup(
     license='BSD',
     packages=find_packages('src'),
     package_dir = {'': 'src'},
-    namespace_packages=['minitage', 'minitage.recipe'],
+    namespace_packages=['minitage', 'minitage.recipe', 'minitage.recipe.fetch'],
     include_package_data=True,
     zip_safe=False,
     install_requires = [
