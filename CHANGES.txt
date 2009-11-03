@@ -2,6 +2,11 @@
 CHANGELOG
 =======================
 
+UP
+-----
+
+    - fix bug on static fetching, (one upon another, content is removed)
+
 1.38
 ------
 

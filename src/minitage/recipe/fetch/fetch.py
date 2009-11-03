@@ -33,7 +33,7 @@ import os
 import shutil
 import tempfile
 from minitage.recipe.common import common
-from minitage.core.common import get_from_cache, system, splitstrip, test_md5
+from minitage.core.common import get_from_cache, system, splitstrip, test_md5, remove_path
 from minitage.core.unpackers import *
 from distutils.dir_util import copy_tree
 
@@ -57,9 +57,11 @@ class Recipe(common.MinitageCommonRecipe):
         """installs an egg
         """
         self.cache = os.path.join(
-            self.buildout['buildout']['directory'],
-            'cache'
+            self.buildout['buildout']['download-directory'],
+            'minitage', 'fetcher'
         )
+        if not os.path.exists(self.cache):
+            os.makedirs(self.cache)
         directories = []
         self.logger.info('Start checkouts')
         for url, url_infos in self.urls.items():
@@ -75,7 +77,7 @@ class Recipe(common.MinitageCommonRecipe):
             cache_downloaded = os.path.join(self.cache, cache_fname)
             downloaded = False
             fname = ''
-            if os.path.exists(cache_downloaded):
+            if os.path.isfile(cache_downloaded):
                 if test_md5(cache_downloaded, url_infos.get('revision', 1)):
                     downloaded = True
                     self.logger.info('%s is already downloaded' %
@@ -95,10 +97,13 @@ class Recipe(common.MinitageCommonRecipe):
                     ftmpdest = tmpdest
                     if u:
                         if os.path.exists(dest):
-                            c = len(os.listdir(dest))
+                            fcontents = os.listdir(dest)
+                            c = len(fcontents)
+                            fbasename = os.path.basename(fname)
                             if c > 1:
-                                shutil.rmtree(dest)
-                                os.makedirs(dest)
+                                for fcontent in fcontents:
+                                    if fbasename != fcontent:
+                                        remove_path(fcontent)
                         u.unpack(fname, tmpdest)
                         if not os.path.exists(self.cache):
                             os.makedirs(self.cache)
