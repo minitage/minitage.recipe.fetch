@@ -100,24 +100,17 @@ Downloading some urls, files, git checkouts with one in a particular checkout di
     ... """
     >>> touch('buildout.cfg', data=data)
     >>> sh('bin/buildout install part')
-    bin/buildout  install part...
+    bin/buildout install part
+    Unused options for buildout: 'download-directory'.
+    Installing part.
     minitage.recipe: Start checkouts
-    minitage.recipe: Download archive
-    minitage.recipe: Downloading file:///tmp/buildout.test/foo.tgz in /tmp/buildout.test/parts/part/foo.tgz
     minitage.recipe: Completed dowbload of file:///tmp/buildout.test/foo.tgz in /tmp/buildout.test/parts/part/
-    minitage.recipe: Download archive
-    minitage.recipe: Setting path
-    Initialized empty Git repository in /tmp/buildout.test/parts/part/minitage.recipe.alt/.git/
-    HEAD is now at e1f30b9 0.28
+    minitage.fetchers.scm: Checkouted /tmp/buildout.test/parts/part/minitage.recipe.alt / http://git.minitage.org/git/minitage/eggs/minitage.recipe (e1f30b9d7a89572fa87fe26f8e353304532a281c) [git].
     minitage.recipe: Completed dowbload of http://git.minitage.org/git/minitage/eggs/minitage.recipe in /tmp/buildout.test/parts/part/minitage.recipe.alt
-    minitage.recipe: Download archive
-    minitage.recipe: Setting path
-    Initialized empty Git repository in /tmp/buildout.test/parts/part/http.git.minitage.org.git.minitage.eggs.minitage.core/.git/
-    HEAD is now at ...
-    minitage.recipe: Completed dowbload of
-    http://git.minitage.org/git/minitage/eggs/minitage.core in /tmp/buildout.test/parts/part/http.git.minitage.org.git.minitage.eggs.minitage.core
-    minitage.recipe: Finnished checkouts...
+    minitage.fetchers.scm: Checkouted /tmp/buildout.test/parts/part/http.git.minitage.org.git.minitage.eggs.minitage.core / http://git.minitage.org/git/minitage/eggs/minitage.core (HEAD) [git].
+    minitage.recipe: Completed dowbload of http://git.minitage.org/git/minitage/eggs/minitage.core in /tmp/buildout.test/parts/part/http.git.minitage.org.git.minitage.eggs.minitage.core
+    minitage.recipe: Finnished checkouts
     <BLANKLINE>
-    g...
     <BLANKLINE>
+
 
