@@ -6,7 +6,7 @@ setupdir = os.path.abspath(
 os.chdir(setupdir)
 
 name='minitage.recipe.fetch'
-version = '1.40'
+version = '1.41'
 
 def read(*rnames):
     return open(
@@ -50,7 +50,7 @@ setup(
     zip_safe=False,
     install_requires = [
         'zc.buildout',
-        'setuptools',
+        
         'minitage.core',
         'minitage.recipe.common',
         'iniparse',
