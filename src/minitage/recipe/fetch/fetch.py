@@ -57,8 +57,10 @@ class Recipe(common.MinitageCommonRecipe):
         """installs an egg
         """
         self.cache = os.path.join(
-            self.buildout['buildout']['download-directory'],
-            'minitage', 'fetcher'
+            self.buildout['buildout'].get(
+                'download-directory',
+                os.path.join(self.buildout['buildout']['directory'], 'downloads')
+            ), 'minitage', 'fetcher'
         )
         if not os.path.exists(self.cache):
             os.makedirs(self.cache)
