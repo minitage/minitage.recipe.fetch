@@ -109,7 +109,13 @@ class Recipe(common.MinitageCommonRecipe):
                         u.unpack(fname, tmpdest)
                         if not os.path.exists(self.cache):
                             os.makedirs(self.cache)
-                        os.rename(fname, cache_downloaded)
+                        try:
+                            os.rename(fname, cache_downloaded)
+                        except:
+                            if os.path.exists(cache_downloaded):
+                                remove_path(cache_downloaded)
+                            shutil.copy2(fname, cache_downloaded)
+                            remove_path(fname)
                         c = os.listdir(tmpdest)
                         if len(c) == 1:
                             ftmpdest = os.path.join(tmpdest, c[0])

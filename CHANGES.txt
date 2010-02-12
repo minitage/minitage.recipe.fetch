@@ -6,6 +6,7 @@ UP
 -----
 
     - fix bug on static fetching, (one upon another, content is removed)
+    - fix invalid crossdevice link errors
 
 1.38
 ------
