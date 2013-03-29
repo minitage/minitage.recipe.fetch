@@ -7,3 +7,6 @@ eggs
 develop-eggs/
 parts
 *pyo
+*pyo
+*pyc
+build
